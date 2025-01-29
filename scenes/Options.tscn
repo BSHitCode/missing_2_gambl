@@ -1,15 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhb7u2m83w7mu"]
+[gd_scene load_steps=3 format=3 uid="uid://dtkcn128hvpdm"]
 
-[ext_resource type="Script" path="res://code/gambl_test.gd" id="1_nwisv"]
+[ext_resource type="Script" path="res://code/options.gd" id="1_gk05m"]
+[ext_resource type="StyleBox" uid="uid://v3452tl7evl5" path="res://resources/styles/menu_button.tres" id="2_r33gx"]
 
-[node name="GamblTest" type="Control"]
+[node name="Options" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nwisv")
+script = ExtResource("1_gk05m")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -24,6 +25,7 @@ grow_vertical = 0
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.32
+theme_override_styles/normal = ExtResource("2_r33gx")
 text = "Menu"
 
 [connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]
