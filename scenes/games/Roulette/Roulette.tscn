@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://do1oufjmnpgk5"]
+[gd_scene load_steps=3 format=3 uid="uid://do1oufjmnpgk5"]
+
+[ext_resource type="Script" path="res://scenes/games/Roulette/collision_shape_2d.gd" id="1_ggoj8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lpccg"]
+radius = 389.803
 
 [node name="Roulette" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(991, 509)
+shape = SubResource("CircleShape2D_lpccg")
+debug_color = Color(0.999515, 0, 0.110578, 0.42)
+script = ExtResource("1_ggoj8")
