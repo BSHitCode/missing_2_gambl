@@ -16,3 +16,45 @@ position = Vector2(991, 509)
 shape = SubResource("CircleShape2D_lpccg")
 debug_color = Color(0.999515, 0, 0.110578, 0.42)
 script = ExtResource("1_ggoj8")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 62.0
+offset_top = 66.0
+offset_right = 492.0
+offset_bottom = 946.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 7.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Schwarz" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Rot" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Grün" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
