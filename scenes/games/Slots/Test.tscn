@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://chdqcgl62ky3j"]
+
+[ext_resource type="PackedScene" uid="uid://b3h1ifu7bjgyw" path="res://scenes/games/Slots/NoGravTest.tscn" id="1_2bi5o"]
+
+[node name="Test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slots" parent="PanelContainer" instance=ExtResource("1_2bi5o")]
