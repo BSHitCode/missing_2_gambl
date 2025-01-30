@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhb7u2m83w7mu"]
+[gd_scene load_steps=4 format=3 uid="uid://bhb7u2m83w7mu"]
 
 [ext_resource type="Script" path="res://code/gambl_select.gd" id="1_pq77e"]
+[ext_resource type="StyleBox" uid="uid://cmdn6j1an2l8k" path="res://resources/styles/menu_button_focus.tres" id="2_5ia85"]
 [ext_resource type="StyleBox" uid="uid://v3452tl7evl5" path="res://resources/styles/menu_button.tres" id="2_tr88n"]
 
 [node name="GamblTest" type="Control"]
@@ -25,6 +26,7 @@ grow_vertical = 0
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.32
+theme_override_styles/focus = ExtResource("2_5ia85")
 theme_override_styles/normal = ExtResource("2_tr88n")
 text = "Menu"
 

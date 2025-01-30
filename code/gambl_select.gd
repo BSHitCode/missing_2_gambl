@@ -3,7 +3,9 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$VBoxContainer/Menu.grab_focus()
+	var menu_button = find_child("Menu", true, false) # Recursively searches for "Start"
+	if menu_button:
+		menu_button.grab_focus()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
