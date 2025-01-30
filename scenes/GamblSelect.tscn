@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhb7u2m83w7mu"]
+[gd_scene load_steps=6 format=3 uid="uid://bhb7u2m83w7mu"]
 
 [ext_resource type="Script" path="res://code/gambl_select.gd" id="1_pq77e"]
 [ext_resource type="StyleBox" uid="uid://cmdn6j1an2l8k" path="res://resources/styles/menu_button_focus.tres" id="2_5ia85"]
+[ext_resource type="Theme" uid="uid://b5og4e2edmeeo" path="res://resources/styles/theme/game_select_theme.tres" id="2_ge3a4"]
 [ext_resource type="StyleBox" uid="uid://v3452tl7evl5" path="res://resources/styles/menu_button.tres" id="2_tr88n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cdqr2"]
+font_size = 76
 
 [node name="GamblTest" type="Control"]
 layout_mode = 3
@@ -12,6 +16,50 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pq77e")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Game Select"
+label_settings = SubResource("LabelSettings_cdqr2")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 200
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Slots" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ge3a4")
+text = "Slots"
+
+[node name="Roulette" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ge3a4")
+text = "Roulette"
+
+[node name="Bingo" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ge3a4")
+text = "Bingo"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -30,4 +78,7 @@ theme_override_styles/focus = ExtResource("2_5ia85")
 theme_override_styles/normal = ExtResource("2_tr88n")
 text = "Menu"
 
+[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/Slots" to="." method="_on_slots_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/Roulette" to="." method="_on_roulette_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/Bingo" to="." method="_on_bingo_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]

@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3h1ifu7bjgyw"]
+
+[ext_resource type="Texture2D" uid="uid://bkecdpxtplks1" path="res://icon.svg" id="1_087o3"]
+[ext_resource type="Script" path="res://scenes/games/Slots/character_body_2d.gd" id="2_cccam"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pg7ud"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7kjr"]
+size = Vector2(127, 128)
+
+[node name="Slots" type="Node2D"]
+position = Vector2(66, 1017)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(316, -53)
+scale = Vector2(-8.85828, 3.40643)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_087o3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_pg7ud")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(898, -204)
+scale = Vector2(-8.85828, 3.40643)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+texture = ExtResource("1_087o3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_pg7ud")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(1583, -356)
+scale = Vector2(-8.85828, 3.40643)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+texture = ExtResource("1_087o3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("RectangleShape2D_pg7ud")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(116, -833)
+script = ExtResource("2_cccam")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_087o3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_g7kjr")

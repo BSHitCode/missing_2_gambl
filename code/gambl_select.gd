@@ -15,3 +15,15 @@ func _process(delta: float) -> void:
 
 func _on_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/Menu.tscn")
+
+
+func _on_slots_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/games/Slots/Slots.tscn")
+
+
+func _on_roulette_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/games/Roulette/Roulette.tscn")
+
+
+func _on_bingo_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/games/Bingo/Bingo.tscn")
