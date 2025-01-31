@@ -17,8 +17,8 @@ radius = 389.803
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(1221.5, 488)
-scale = Vector2(6.08594, 6.17188)
+position = Vector2(1223.5, 499)
+scale = Vector2(5.42969, 5.21875)
 texture = ExtResource("1_7dvly")
 script = ExtResource("2_c64al")
 
