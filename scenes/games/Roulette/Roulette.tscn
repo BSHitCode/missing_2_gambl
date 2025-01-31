@@ -1,6 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://do1oufjmnpgk5"]
+[gd_scene load_steps=10 format=3 uid="uid://do1oufjmnpgk5"]
 
+[ext_resource type="Texture2D" uid="uid://bkecdpxtplks1" path="res://icon.svg" id="1_7dvly"]
 [ext_resource type="Script" path="res://scenes/games/Roulette/collision_shape_2d.gd" id="1_ggoj8"]
+[ext_resource type="Script" path="res://scenes/games/Roulette/sprite_2d.gd" id="2_c64al"]
+[ext_resource type="Theme" uid="uid://b5og4e2edmeeo" path="res://resources/styles/theme/game_select_theme.tres" id="3_lv8hu"]
+[ext_resource type="StyleBox" uid="uid://cmdn6j1an2l8k" path="res://resources/styles/menu_button_focus.tres" id="4_1vu5k"]
+[ext_resource type="Script" path="res://scenes/games/Roulette/control.gd" id="4_bw4dg"]
+[ext_resource type="StyleBox" uid="uid://bwlfshmexmdqw" path="res://resources/styles/menu_button_hover.tres" id="5_th72v"]
+[ext_resource type="StyleBox" uid="uid://v3452tl7evl5" path="res://resources/styles/menu_button.tres" id="6_e7fk2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lpccg"]
 radius = 389.803
@@ -10,51 +17,106 @@ radius = 389.803
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1221.5, 488)
+scale = Vector2(6.08594, 6.17188)
+texture = ExtResource("1_7dvly")
+script = ExtResource("2_c64al")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(991, 509)
+position = Vector2(1221.31, 487)
 shape = SubResource("CircleShape2D_lpccg")
 debug_color = Color(0.999515, 0, 0.110578, 0.42)
 script = ExtResource("1_ggoj8")
 
-[node name="Control" type="Control" parent="."]
+[node name="RouletteControl" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 62.0
-offset_top = 66.0
-offset_right = 492.0
-offset_bottom = 946.0
+offset_left = 57.0
+offset_top = 237.0
+offset_right = 487.0
+offset_bottom = 899.0
+script = ExtResource("4_bw4dg")
 
-[node name="PanelContainer" type="PanelContainer" parent="Control"]
+[node name="PanelContainer" type="PanelContainer" parent="RouletteControl"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 254.0
 offset_right = 7.0
-offset_bottom = 4.0
+offset_bottom = -281.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="RouletteControl/PanelContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="RouletteControl/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="RouletteControl/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Schwarz" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="Schwarz" type="Button" parent="RouletteControl/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_lv8hu")
+theme_override_styles/focus = ExtResource("4_1vu5k")
+theme_override_styles/hover = ExtResource("5_th72v")
+theme_override_styles/normal = ExtResource("6_e7fk2")
+text = "Schwarz"
+
+[node name="MarginContainer2" type="MarginContainer" parent="RouletteControl/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Rot" type="Button" parent="RouletteControl/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme = ExtResource("3_lv8hu")
+theme_override_styles/focus = ExtResource("4_1vu5k")
+theme_override_styles/hover = ExtResource("5_th72v")
+theme_override_styles/normal = ExtResource("6_e7fk2")
+text = "Rot"
+
+[node name="MarginContainer3" type="MarginContainer" parent="RouletteControl/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Rot" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2"]
+[node name="Grün" type="Button" parent="RouletteControl/PanelContainer/MarginContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+theme = ExtResource("3_lv8hu")
+theme_override_styles/focus = ExtResource("4_1vu5k")
+theme_override_styles/hover = ExtResource("5_th72v")
+theme_override_styles/normal = ExtResource("6_e7fk2")
+text = "Grün"
+
+[node name="PanelContainer2" type="PanelContainer" parent="RouletteControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.128
+anchor_top = -0.348
+anchor_right = 4.32
+anchor_bottom = 1.27
+offset_left = 0.0400009
+offset_top = 970.376
+offset_right = -1561.6
+offset_bottom = 0.259949
+
+[node name="MarginContainer" type="MarginContainer" parent="RouletteControl/PanelContainer2"]
 layout_mode = 2
 
-[node name="MarginContainer3" type="MarginContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="RouletteControl/PanelContainer2/MarginContainer"]
 layout_mode = 2
 
-[node name="Grün" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/MarginContainer3"]
+[node name="MarginContainer" type="MarginContainer" parent="RouletteControl/PanelContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Button" type="Button" parent="RouletteControl/PanelContainer2/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_lv8hu")
+theme_override_styles/focus = ExtResource("4_1vu5k")
+theme_override_styles/hover = ExtResource("5_th72v")
+theme_override_styles/normal = ExtResource("6_e7fk2")
+text = "Menu"
+
+[connection signal="pressed" from="RouletteControl/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/Schwarz" to="StaticBody2D/Sprite2D" method="_on_schwarz_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/Rot" to="StaticBody2D/Sprite2D" method="_on_rot_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer/MarginContainer/VBoxContainer/MarginContainer3/Grün" to="StaticBody2D/Sprite2D" method="_on_grün_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer2/MarginContainer/VBoxContainer/MarginContainer/Button" to="RouletteControl" method="_on_button_pressed"]
