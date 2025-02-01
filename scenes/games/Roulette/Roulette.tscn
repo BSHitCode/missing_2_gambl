@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://do1oufjmnpgk5"]
 
-[ext_resource type="Texture2D" uid="uid://bkecdpxtplks1" path="res://icon.svg" id="1_7dvly"]
 [ext_resource type="Script" path="res://scenes/games/Roulette/collision_shape_2d.gd" id="1_ggoj8"]
+[ext_resource type="Texture2D" uid="uid://dnc7uqqdlroif" path="res://Roulette.png" id="1_p8o02"]
 [ext_resource type="Script" path="res://scenes/games/Roulette/sprite_2d.gd" id="2_c64al"]
 [ext_resource type="Theme" uid="uid://b5og4e2edmeeo" path="res://resources/styles/theme/game_select_theme.tres" id="3_lv8hu"]
 [ext_resource type="StyleBox" uid="uid://cmdn6j1an2l8k" path="res://resources/styles/menu_button_focus.tres" id="4_1vu5k"]
@@ -17,9 +17,9 @@ radius = 389.803
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(1223.5, 499)
-scale = Vector2(5.42969, 5.21875)
-texture = ExtResource("1_7dvly")
+position = Vector2(1214, 482)
+scale = Vector2(1.53516, 1.51953)
+texture = ExtResource("1_p8o02")
 script = ExtResource("2_c64al")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
