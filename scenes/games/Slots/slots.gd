@@ -308,17 +308,20 @@ func _on_start_pressed() -> void:
 			slot2 = false
 		2:
 			slot3 = false
+			$MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Stop.set_text("Get Result")
 		_:
+			var ra: Array[Rarity]
 			for result in result_array:
 				var item: Item = result
 				var t: Texture2D = $MarginContainer/HBoxContainer/Panel1/Wheel1/StaticBody2D/Sprite2D.texture
-				t
 				
+				ra.push_back(item.rarity)
 				print("Rarity: ", Rarity.find_key(item.rarity))#.get_node("StaticBody2D").get_node("Sprite2D").texture.get)
 				#item.node.position.x += randi() % 100
 			#var collisions = CollisionManager.get_collisions()
 			#for entry in collisions:
 				#print("Name:", entry.name, ", Instance ID:", entry.instance_id, ", Texture:", entry.texture)
+			$MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Stop.set_text("%s\n%s\n%s\n" % [Rarity.find_key(ra.pop_front()), Rarity.find_key(ra.pop_front()), Rarity.find_key(ra.pop_front())])
 	slot_count += 1
 	pass
 
