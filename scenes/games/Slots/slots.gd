@@ -9,6 +9,9 @@ var w2_array_hide: Array
 var w3_array_show: Array
 var w3_array_hide: Array
 
+var result_array: Array
+var result_count: int = 0
+
 const sep_height: int = 300
 var sep_count: int = 0
 const vertica_offset: int = 100
@@ -17,10 +20,13 @@ const wheel_item_count: int = 5
 # total items
 
 const speed: int = 800
-var slot1: int = 1
-var slot2: int = 1
-var slot3: int = 1
+var slot1: bool = true
+var slot2: bool = true
+var slot3: bool = true
 var slot_count: int = 0
+
+const lock_speed: float = 400.0
+const height_game: int = 10
 
 var active_items: int = 0
 
@@ -59,6 +65,7 @@ func _ready() -> void:
 		#menu_button.grab_focus()
 	var panel1: Node = $MarginContainer/HBoxContainer/Panel1
 	var wheel1: Node = $MarginContainer/HBoxContainer/Panel1/Wheel1
+	wheel1.move_local_y(-150, false)
 	_create_nodes(panel1, wheel1, w1_queue, w1_array_show, w1_array_hide, 10, vertica_offset)
 	
 	var panel2: Node = $MarginContainer/HBoxContainer/Panel2
@@ -118,11 +125,11 @@ func _create_nodes(panel: Node, wheel: Node, queue: Array[Item], array_show: Arr
 	w1_5.move_local_y(sep_height * 4, false)
 	
 	
-	array_show.push_back(w1_1)
-	array_show.push_back(w1_2)
-	array_show.push_back(w1_3)
-	array_show.push_back(w1_4)
-	array_show.push_back(w1_5)
+	array_show.push_back(Item.new(w1_1, Rarity.COMMON, panel))
+	array_show.push_back(Item.new(w1_2, Rarity.UNCOMMON, panel))
+	array_show.push_back(Item.new(w1_3, Rarity.RARE, panel))
+	array_show.push_back(Item.new(w1_4, Rarity.UNIQUE, panel))
+	array_show.push_back(Item.new(w1_5, Rarity.LEGENDARY, panel))
 
 	var item: Item = null
 	queue = _fill_queue(t_item_count, [
@@ -137,23 +144,76 @@ func _create_nodes(panel: Node, wheel: Node, queue: Array[Item], array_show: Arr
 		if item == null:
 			break
 		if array_show.size() <	wheel_item_count:
-			array_show.push_back(item.node)
+			array_show.push_back(item)
 		else:
-			array_hide.push_back(item.node)
+			array_hide.push_back(item)
 	
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	_draw_wheels(w1_array_show, w1_array_show, delta		* slot1)
-	_draw_wheels(w2_array_show, w2_array_show, delta*1.2	* slot2)
-	_draw_wheels(w3_array_show, w3_array_show, delta*1.4	* slot3)
+	if slot1:
+		_draw_wheels(w1_array_show, w1_array_show, delta)
+	else:
+		_stop_wheels(w1_array_show, w1_array_show, delta)
+		
+	if slot2:
+		_draw_wheels(w2_array_show, w2_array_show, delta*1.2)
+	else:
+		_stop_wheels(w2_array_show, w2_array_show, delta)
+	
+	if slot3:
+		_draw_wheels(w3_array_show, w3_array_show, delta*1.4)
+	else:
+		_stop_wheels(w3_array_show, w3_array_show, delta)
+
+func _stop_wheels(array_show: Array, array_hide: Array, delta: float) -> void:
+	var node: Node
+	for i in range(wheel_item_count):
+		if array_show.size() <= i: return
+		var item: Item = array_show[i]
+		node = item.node
+		node.set_deferred("visible", 1)
+		if node == null: continue
+		var posy:int = node.position.y
+		
+		for j in range(wheel_item_count):
+			if posy < (sep_height * j) and posy > (sep_height * (j - 1))-1:
+				print((sep_height * (j - 1))-1)
+				print(posy)
+				print(sep_height * j)
+				var new_height: int = (sep_height * j)
+				
+				if (new_height - node.position.y) < (node.position.y - (new_height-sep_height)):
+					node.move_local_y(delta*lock_speed, false)
+				elif abs(new_height - node.position.y) < height_game or abs(node.position.y - (new_height-sep_height)) < height_game:
+					var result_item: Item = array_show.pop_at(i)
+					var final_item_num: int = 2
+					#if abs((sep_height * final_item_num) - node.position.y) < height_game or abs(node.position.y - ((sep_height * (final_item_num-1)))) < height_game:
+					if abs((sep_height * final_item_num) - node.position.y) < height_game:
+						result_array.push_back(result_item)
+						result_count += 1
+					elif result_count >= 3:
+						array_show.pop_front()
+						
+				else:
+					node.move_local_y(-delta*lock_speed, false)
+					#node.move_local_y(delta*lock_speed, false)
+				
+				print(node.position.y)
+				print("Corrected")
+				print(array_show.size())
+				print(abs(new_height - node.position.y) < height_game)
+				print(abs(node.position.y - (new_height-sep_height)) < height_game)
+				print(" ")
+	pass
 
 func _draw_wheels(array_show: Array, array_hide: Array, delta: float) -> void:
 	var node: Node
 	
 	for i in range(wheel_item_count):
-		node = array_show[0]
+		var item = array_show[0]
+		node = item.node
 		node.set_deferred("visible", 1)
 		
 		if node.position.y > sep_height * wheel_item_count:
@@ -161,25 +221,12 @@ func _draw_wheels(array_show: Array, array_hide: Array, delta: float) -> void:
 			node.set_deferred("visible", 0)
 			# swap between visible and hidden arrays
 			if not array_hide.is_empty():
-				node = array_hide.pop_front()
-				array_show.push_back(node)
+				item = array_hide.pop_front()
+				array_show.push_back(item)
 			array_hide.push_back(array_show.pop_front())
 		else:
 			node.move_local_y(delta * speed, false)
 			array_show.push_back(array_show.pop_front())
-
-
-func _on_button_pressed() -> void:
-	match slot_count:
-		0:
-			slot1 = 0
-		1:
-			slot2 = 0
-		2:
-			slot3 = 0
-	slot_count += 1
-	pass
-
 
 func _on_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/Menu.tscn")
@@ -193,7 +240,7 @@ func _input(event: InputEvent) -> void:
 func _get_node_from_name(name: String) -> Node:
 	return find_child(name, true, false)
 
-func _fill_queue(count: int, items: Array[Item]) -> Array[Item]:
+func _fill_queue(t_item_count: int, items: Array[Item]) -> Array[Item]:
 	var fill_arr: Array[Item] = []
 	
 	# sort items by rarity
@@ -219,23 +266,21 @@ func _fill_queue(count: int, items: Array[Item]) -> Array[Item]:
 			continue  # skip empty rarity
 		
 		for item in arr as Array[Item]:
-			var r: int = int((count * (item.rarity / 100.0)) / arr.size())
+			var r: int = int((t_item_count * (item.rarity / 100.0)) / arr.size())
 			for i in range(r):
-				if fill_arr.size() >= count:
+				if fill_arr.size() >= t_item_count:
 					return fill_arr  # early exit
 				var height = _get_sep_height()
 				var insert_item = Item.new(item.node.duplicate(), item.rarity, item.node.get_parent())
 				var pos = item.node.get_position()
 				pos.y = 0.0
 				insert_item.node.set_position(pos)
-				print(((randi() % item_shuffle) == 2))
 				if ((randi() % item_shuffle) == 2):
 					fill_arr.push_back(insert_item)
 				else:
 					fill_arr.push_front(insert_item)
-	print(" ")
 	# do not exceed count
-	return fill_arr.slice(0, count)
+	return fill_arr.slice(0, t_item_count)
 
 
 
@@ -253,3 +298,39 @@ func _get_sep_height() -> int:
 	else:
 		sep_count = 0
 	return 0# count * sep_height
+
+
+func _on_start_pressed() -> void:
+	match slot_count:
+		0:
+			slot1 = false
+		1:
+			slot2 = false
+		2:
+			slot3 = false
+			$MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Stop.set_text("Get Result")
+		_:
+			var ra: Array[Rarity]
+			for result in result_array:
+				var item: Item = result
+				var t: Texture2D = $MarginContainer/HBoxContainer/Panel1/Wheel1/StaticBody2D/Sprite2D.texture
+				
+				ra.push_back(item.rarity)
+				print("Rarity: ", Rarity.find_key(item.rarity))#.get_node("StaticBody2D").get_node("Sprite2D").texture.get)
+				#item.node.position.x += randi() % 100
+			#var collisions = CollisionManager.get_collisions()
+			#for entry in collisions:
+				#print("Name:", entry.name, ", Instance ID:", entry.instance_id, ", Texture:", entry.texture)
+			$MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Stop.set_text("%s\n%s\n%s\n" % [Rarity.find_key(ra.pop_front()), Rarity.find_key(ra.pop_front()), Rarity.find_key(ra.pop_front())])
+	slot_count += 1
+	pass
+
+
+
+func _on_restart_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/games/Slots/Slots.tscn")
+	slot1 = true
+	slot2 = true
+	slot3 = true
+	slot_count = 0
+	pass
