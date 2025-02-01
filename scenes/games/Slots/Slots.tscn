@@ -152,6 +152,7 @@ theme_override_styles/normal = ExtResource("4_nrarf")
 text = "Menu"
 
 [node name="NodeDetector" type="Marker2D" parent="."]
+visible = false
 position = Vector2(-9, 697)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="NodeDetector"]
