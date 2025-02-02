@@ -26,7 +26,7 @@ var slot3: bool = true
 var slot_count: int = 0
 
 const lock_speed: float = 400.0
-const height_game: int = 10
+const height_game: int = 20
 
 var active_items: int = 0
 
@@ -158,12 +158,12 @@ func _process(delta: float) -> void:
 		_stop_wheels(w1_array_show, w1_array_show, delta)
 		
 	if slot2:
-		_draw_wheels(w2_array_show, w2_array_show, delta*1.2)
+		_draw_wheels(w2_array_show, w2_array_show, delta*1.75)
 	else:
 		_stop_wheels(w2_array_show, w2_array_show, delta)
 	
 	if slot3:
-		_draw_wheels(w3_array_show, w3_array_show, delta*1.4)
+		_draw_wheels(w3_array_show, w3_array_show, delta*2.5)
 	else:
 		_stop_wheels(w3_array_show, w3_array_show, delta)
 
@@ -197,8 +197,8 @@ func _stop_wheels(array_show: Array, array_hide: Array, delta: float) -> void:
 						array_show.pop_front()
 						
 				else:
-					node.move_local_y(-delta*lock_speed, false)
-					#node.move_local_y(delta*lock_speed, false)
+					#node.move_local_y(-delta*lock_speed, false)
+					node.move_local_y(delta*lock_speed, false)
 				
 				print(node.position.y)
 				print("Corrected")
