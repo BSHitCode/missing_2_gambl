@@ -27,6 +27,9 @@ func _on_roulette_pressed() -> void:
 
 func _on_pairs_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/games/Pairs/main.tscn")
+	
+func _on_bingo_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/games/Bingo/scene_bingo.tscn")
 
 # detects key press
 func _input(event: InputEvent) -> void:

@@ -1,0 +1,195 @@
+[gd_scene load_steps=13 format=3 uid="uid://b2qmi0penhs6k"]
+
+[ext_resource type="Script" path="res://scenes/games/Bingo/bingo_grid.gd" id="1_8mw3w"]
+[ext_resource type="Script" path="res://scenes/games/Bingo/scene_bingo.gd" id="1_d2kca"]
+[ext_resource type="AudioStream" uid="uid://bs5u2qof2q531" path="res://scenes/games/Bingo/bingocorrect.wav" id="3_osigo"]
+[ext_resource type="AudioStream" uid="uid://03duq7woirkj" path="res://scenes/games/Bingo/bingowon.wav" id="4_jm1gb"]
+[ext_resource type="Script" path="res://scenes/games/Bingo/sound_switch_button.gd" id="10_kt0ah"]
+[ext_resource type="Texture2D" uid="uid://bpksxpd2l2jca" path="res://scenes/games/Bingo/sound_on.png" id="11_dmymm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mxw53"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b1ftw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4nrr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_blend = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5yo0x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d7nkq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xkjer"]
+font_size = 50
+
+[node name="GameManager" type="CanvasLayer"]
+script = ExtResource("1_d2kca")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bingoGridContainer" type="GridContainer" parent="MarginContainer" node_paths=PackedStringArray("bingo_template")]
+custom_minimum_size = Vector2(100, 400)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+columns = 5
+script = ExtResource("1_8mw3w")
+bingo_template = NodePath("bingoNumberExample")
+
+[node name="bingoNumberExample" type="Button" parent="MarginContainer/bingoGridContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mxw53")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_b1ftw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u4nrr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5yo0x")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d7nkq")
+text = "1"
+
+[node name="Panel" type="Panel" parent="MarginContainer/bingoGridContainer/bingoNumberExample"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Total draws"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 15
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "9999999999 times"
+horizontal_alignment = 2
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+text = "Output:"
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+scroll_following = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -116.0
+offset_right = 28.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="singleDraw" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Draw 1"
+
+[node name="tenDraw" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Draw 10"
+
+[node name="ResetButton" type="Button" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -17.0
+offset_top = 94.0
+offset_right = 23.0
+offset_bottom = 125.0
+grow_horizontal = 2
+text = "Reset"
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = -48.0
+offset_right = 174.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Total number of draws:"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "9999999999 times"
+label_settings = SubResource("LabelSettings_xkjer")
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_osigo")
+max_polyphony = 10
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jm1gb")
+max_polyphony = 10
+
+[node name="TextureButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -117.0
+offset_top = 7.0
+offset_right = -77.0
+offset_bottom = 47.0
+grow_horizontal = 0
+script = ExtResource("10_kt0ah")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureRect" parent="TextureButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("11_dmymm")
+
+[connection signal="button_down" from="VBoxContainer/singleDraw" to="." method="_on_single_draw_button_down"]
+[connection signal="button_down" from="VBoxContainer/tenDraw" to="." method="_on_ten_draw_button_down"]
+[connection signal="button_down" from="ResetButton" to="." method="_on_reset_button_button_down"]
+[connection signal="button_down" from="TextureButton" to="TextureButton" method="_on_button_down"]

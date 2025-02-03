@@ -61,6 +61,12 @@ size_flags_horizontal = 3
 theme = ExtResource("2_ge3a4")
 text = "Pairs"
 
+[node name="Bingo" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_ge3a4")
+text = "Bingo"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 2
@@ -81,4 +87,5 @@ text = "Menu"
 [connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/Slots" to="." method="_on_slots_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/Roulette" to="." method="_on_roulette_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/Pairs" to="." method="_on_pairs_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/Bingo" to="." method="_on_bingo_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]
