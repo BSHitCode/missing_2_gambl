@@ -116,7 +116,370 @@ theme_override_styles/hover = ExtResource("5_th72v")
 theme_override_styles/normal = ExtResource("6_e7fk2")
 text = "Menu"
 
+[node name="PanelContainer3" type="PanelContainer" parent="RouletteControl"]
+layout_mode = 0
+offset_left = 1516.0
+offset_top = 639.0
+offset_right = 1857.0
+offset_bottom = 837.0
+
+[node name="MarginContainer" type="MarginContainer" parent="RouletteControl/PanelContainer3"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RouletteControl/PanelContainer3/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="RouletteControl/PanelContainer3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Gerade" type="Button" parent="RouletteControl/PanelContainer3/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_lv8hu")
+theme_override_styles/focus = ExtResource("4_1vu5k")
+theme_override_styles/hover = ExtResource("5_th72v")
+theme_override_styles/normal = ExtResource("6_e7fk2")
+text = "Gerade"
+
+[node name="MarginContainer2" type="MarginContainer" parent="RouletteControl/PanelContainer3/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Ungerade" type="Button" parent="RouletteControl/PanelContainer3/MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme = ExtResource("3_lv8hu")
+theme_override_styles/focus = ExtResource("4_1vu5k")
+theme_override_styles/hover = ExtResource("5_th72v")
+theme_override_styles/normal = ExtResource("6_e7fk2")
+text = "Ungerade"
+
+[node name="PanelContainer4" type="PanelContainer" parent="RouletteControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.123
+anchor_top = -0.352
+anchor_right = 4.327
+anchor_bottom = 1.293
+offset_left = 534.89
+offset_top = -4.97598
+offset_right = -1294.61
+offset_bottom = -12.9661
+
+[node name="MarginContainer" type="MarginContainer" parent="RouletteControl/PanelContainer4"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RouletteControl/PanelContainer4/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="one" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="MarginContainer2" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="two" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+text = "2"
+
+[node name="MarginContainer3" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="three" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+text = "3"
+
+[node name="MarginContainer4" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="four" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer4"]
+layout_mode = 2
+text = "4"
+
+[node name="MarginContainer5" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="five" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer5"]
+layout_mode = 2
+text = "5"
+
+[node name="MarginContainer6" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="six" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer6"]
+layout_mode = 2
+text = "6
+"
+
+[node name="MarginContainer7" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="seven" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer7"]
+layout_mode = 2
+text = "7"
+
+[node name="MarginContainer8" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="eight" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer8"]
+layout_mode = 2
+text = "8"
+
+[node name="MarginContainer9" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="nine" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer9"]
+layout_mode = 2
+text = "9"
+
+[node name="MarginContainer10" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ten" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer10"]
+layout_mode = 2
+text = "10"
+
+[node name="MarginContainer11" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="eleven" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer11"]
+layout_mode = 2
+text = "11"
+
+[node name="MarginContainer12" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="twelve" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer12"]
+layout_mode = 2
+text = "12"
+
+[node name="MarginContainer13" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="thirteen" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer13"]
+layout_mode = 2
+text = "13"
+
+[node name="MarginContainer14" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="fourteen" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer14"]
+layout_mode = 2
+text = "14"
+
+[node name="MarginContainer15" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="fiveteen" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer15"]
+layout_mode = 2
+text = "15"
+
+[node name="MarginContainer16" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="sixteen" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer16"]
+layout_mode = 2
+text = "16"
+
+[node name="MarginContainer17" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="seventeen" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer17"]
+layout_mode = 2
+text = "17"
+
+[node name="MarginContainer18" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="eightteen" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer18"]
+layout_mode = 2
+text = "18"
+
+[node name="MarginContainer19" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="nineteen" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer19"]
+layout_mode = 2
+text = "19"
+
+[node name="MarginContainer20" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="twenty" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer20"]
+layout_mode = 2
+text = "20"
+
+[node name="MarginContainer21" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="twentyone" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer21"]
+layout_mode = 2
+text = "21"
+
+[node name="MarginContainer22" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="twentytwo" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer22"]
+layout_mode = 2
+text = "22"
+
+[node name="MarginContainer23" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="twentythree" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer23"]
+layout_mode = 2
+text = "23"
+
+[node name="MarginContainer24" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="twentyfour" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer24"]
+layout_mode = 2
+text = "24"
+
+[node name="MarginContainer25" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="twentyfive" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer25"]
+layout_mode = 2
+text = "25"
+
+[node name="MarginContainer26" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="twentysix" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer26"]
+layout_mode = 2
+text = "26"
+
+[node name="MarginContainer27" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="twentyseven" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer27"]
+layout_mode = 2
+text = "27"
+
+[node name="MarginContainer28" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="twentyeight" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer28"]
+layout_mode = 2
+text = "28"
+
+[node name="MarginContainer29" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="twentynine" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer29"]
+layout_mode = 2
+text = "29"
+
+[node name="MarginContainer30" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="thirty" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer30"]
+layout_mode = 2
+text = "30"
+
+[node name="MarginContainer31" type="MarginContainer" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="thityone" type="Button" parent="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer31"]
+layout_mode = 2
+text = "31
+"
+
+[node name="PanelContainer5" type="PanelContainer" parent="RouletteControl"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.12
+anchor_top = -0.356
+anchor_right = 4.328
+anchor_bottom = 1.271
+offset_left = 648.6
+offset_top = -0.328003
+offset_right = -1185.04
+offset_bottom = -902.402
+
+[node name="MarginContainer" type="MarginContainer" parent="RouletteControl/PanelContainer5"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RouletteControl/PanelContainer5/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="RouletteControl/PanelContainer5/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="thirtytwo" type="Button" parent="RouletteControl/PanelContainer5/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "32"
+
+[node name="MarginContainer2" type="MarginContainer" parent="RouletteControl/PanelContainer5/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="thirtythree" type="Button" parent="RouletteControl/PanelContainer5/MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+text = "33"
+
+[node name="MarginContainer3" type="MarginContainer" parent="RouletteControl/PanelContainer5/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="thirtyfour" type="Button" parent="RouletteControl/PanelContainer5/MarginContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+text = "34"
+
+[node name="MarginContainer4" type="MarginContainer" parent="RouletteControl/PanelContainer5/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="thirtyfive" type="Button" parent="RouletteControl/PanelContainer5/MarginContainer/VBoxContainer/MarginContainer4"]
+layout_mode = 2
+text = "35"
+
+[node name="MarginContainer5" type="MarginContainer" parent="RouletteControl/PanelContainer5/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="thirtysix" type="Button" parent="RouletteControl/PanelContainer5/MarginContainer/VBoxContainer/MarginContainer5"]
+layout_mode = 2
+text = "36"
+
 [connection signal="pressed" from="RouletteControl/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/Schwarz" to="StaticBody2D/Sprite2D" method="_on_schwarz_pressed"]
 [connection signal="pressed" from="RouletteControl/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/Rot" to="StaticBody2D/Sprite2D" method="_on_rot_pressed"]
 [connection signal="pressed" from="RouletteControl/PanelContainer/MarginContainer/VBoxContainer/MarginContainer3/Grün" to="StaticBody2D/Sprite2D" method="_on_grün_pressed"]
 [connection signal="pressed" from="RouletteControl/PanelContainer2/MarginContainer/VBoxContainer/MarginContainer/Button" to="RouletteControl" method="_on_button_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer3/MarginContainer/VBoxContainer/MarginContainer/Gerade" to="StaticBody2D/Sprite2D" method="_on_gerade_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer3/MarginContainer/VBoxContainer/MarginContainer2/Ungerade" to="StaticBody2D/Sprite2D" method="_on_ungerade_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer/one" to="StaticBody2D/Sprite2D" method="_on_one_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer2/two" to="StaticBody2D/Sprite2D" method="_on_two_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer3/three" to="StaticBody2D/Sprite2D" method="_on_three_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer4/four" to="StaticBody2D/Sprite2D" method="_on_four_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer5/five" to="StaticBody2D/Sprite2D" method="_on_five_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer6/six" to="StaticBody2D/Sprite2D" method="_on_six_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer7/seven" to="StaticBody2D/Sprite2D" method="_on_seven_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer8/eight" to="StaticBody2D/Sprite2D" method="_on_eight_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer9/nine" to="StaticBody2D/Sprite2D" method="_on_nine_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer10/ten" to="StaticBody2D/Sprite2D" method="_on_ten_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer11/eleven" to="StaticBody2D/Sprite2D" method="_on_eleven_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer12/twelve" to="StaticBody2D/Sprite2D" method="_on_twelve_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer13/thirteen" to="StaticBody2D/Sprite2D" method="_on_thirteen_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer14/fourteen" to="StaticBody2D/Sprite2D" method="_on_fourteen_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer15/fiveteen" to="StaticBody2D/Sprite2D" method="_on_fiveteen_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer16/sixteen" to="StaticBody2D/Sprite2D" method="_on_sixteen_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer17/seventeen" to="StaticBody2D/Sprite2D" method="_on_seventeen_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer18/eightteen" to="StaticBody2D/Sprite2D" method="_on_eightteen_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer19/nineteen" to="StaticBody2D/Sprite2D" method="_on_nineteen_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer20/twenty" to="StaticBody2D/Sprite2D" method="_on_twenty_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer21/twentyone" to="StaticBody2D/Sprite2D" method="_on_twentyone_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer22/twentytwo" to="StaticBody2D/Sprite2D" method="_on_twentytwo_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer23/twentythree" to="StaticBody2D/Sprite2D" method="_on_twentythree_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer24/twentyfour" to="StaticBody2D/Sprite2D" method="_on_twentyfour_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer25/twentyfive" to="StaticBody2D/Sprite2D" method="_on_twentyfive_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer26/twentysix" to="StaticBody2D/Sprite2D" method="_on_twentysix_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer27/twentyseven" to="StaticBody2D/Sprite2D" method="_on_twentyseven_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer28/twentyeight" to="StaticBody2D/Sprite2D" method="_on_twentyeight_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer29/twentynine" to="StaticBody2D/Sprite2D" method="_on_twentynine_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer30/thirty" to="StaticBody2D/Sprite2D" method="_on_thirty_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer4/MarginContainer/VBoxContainer/MarginContainer31/thityone" to="StaticBody2D/Sprite2D" method="_on_thityone_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer5/MarginContainer/VBoxContainer/MarginContainer/thirtytwo" to="StaticBody2D/Sprite2D" method="_on_thirtytwo_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer5/MarginContainer/VBoxContainer/MarginContainer2/thirtythree" to="StaticBody2D/Sprite2D" method="_on_thirtythree_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer5/MarginContainer/VBoxContainer/MarginContainer3/thirtyfour" to="StaticBody2D/Sprite2D" method="_on_thirtyfour_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer5/MarginContainer/VBoxContainer/MarginContainer4/thirtyfive" to="StaticBody2D/Sprite2D" method="_on_thirtyfive_pressed"]
+[connection signal="pressed" from="RouletteControl/PanelContainer5/MarginContainer/VBoxContainer/MarginContainer5/thirtysix" to="StaticBody2D/Sprite2D" method="_on_thirtysix_pressed"]
