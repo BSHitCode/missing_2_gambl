@@ -1,8 +1,8 @@
 # GamblingGame
 **Contributors**
-FelixWoess: k12206357
-Cornelius Engl: k12216183
-ziraelexe: k12209550
+   - FelixWoess: k12206357
+   - Cornelius Engl: k12216183
+   - ziraelexe: k12209550
 
 ## Installation
 
@@ -23,13 +23,18 @@ ziraelexe: k12209550
 
 ## Execution
 
-### Using compiled file
+### Using compiled file (ONLY on with-exec branch -> aka THIS ONE)
+*Use the master branch for only the code!*
 1. **Run the Game**
    - Windows: Open `GamblingGame.exe` (x86_64)
    - Linux: Open `GamblingGameLinux.x86_64` (x86_64)
    - Linux: Open `GamblingGameLinux.arm64` (arm64)
-   - For others please export on your own using the following explaination.
-
+   - For others please export on your own using the previous explaination (preferred).
+   
+2. **Run Linux Binary**
+   - `uname -m`
+   - `./GamblingGameLinux.x86_64`
+   
 ### In Editor
 1. **Run the Game**
    - Open the project in Godot Engine.
