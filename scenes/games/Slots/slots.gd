@@ -11,6 +11,8 @@ var w3_array_hide: Array
 
 var result_array: Array
 var result_count: int = 0
+var finish: bool = false
+var score: int = 0
 
 const sep_height: int = 300
 var sep_count: int = 0
@@ -168,6 +170,8 @@ func _process(delta: float) -> void:
 		_stop_wheels(w3_array_show, w3_array_show, delta)
 
 func _stop_wheels(array_show: Array, array_hide: Array, delta: float) -> void:
+	if finish: 
+		return
 	var node: Node
 	for i in range(wheel_item_count):
 		if array_show.size() <= i: return
@@ -184,9 +188,10 @@ func _stop_wheels(array_show: Array, array_hide: Array, delta: float) -> void:
 				print(sep_height * j)
 				var new_height: int = (sep_height * j)
 				
-				if (new_height - node.position.y) < (node.position.y - (new_height-sep_height)):
-					node.move_local_y(delta*lock_speed, false)
-				elif abs(new_height - node.position.y) < height_game or abs(node.position.y - (new_height-sep_height)) < height_game:
+				#if (new_height - node.position.y) - height_game < (node.position.y - (new_height-sep_height) + height_game):
+					#node.move_local_y(delta*lock_speed, false)
+				#if abs(new_height - node.position.y) < height_game: #or abs(node.position.y - (new_height-sep_height)) < height_game:
+				if abs(node.position.y - (new_height-sep_height)) < height_game:
 					var result_item: Item = array_show.pop_at(i)
 					var final_item_num: int = 2
 					#if abs((sep_height * final_item_num) - node.position.y) < height_game or abs(node.position.y - ((sep_height * (final_item_num-1)))) < height_game:
@@ -308,12 +313,20 @@ func _on_start_pressed() -> void:
 			slot2 = false
 		2:
 			slot3 = false
-			$MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Stop.set_text("Get Result")
-		_:
+			$MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Stop.set_text("Getting Result.")
+			await get_tree().create_timer(0.1).timeout
+		#3:
+			$MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Stop.set_text("Getting Result..")
+			await get_tree().create_timer(0.1).timeout
+			$MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Stop.set_text("Getting Result...")
+			await get_tree().create_timer(0.1).timeout
 			var ra: Array[Rarity]
+			while result_array.size() < 3 and !finish:
+				await get_tree().create_timer(0.2).timeout
+			finish = true
 			for result in result_array:
 				var item: Item = result
-				var t: Texture2D = $MarginContainer/HBoxContainer/Panel1/Wheel1/StaticBody2D/Sprite2D.texture
+				#var t: Texture2D = $MarginContainer/HBoxContainer/Panel1/Wheel1/StaticBody2D/Sprite2D.texture
 				
 				ra.push_back(item.rarity)
 				print("Rarity: ", Rarity.find_key(item.rarity))#.get_node("StaticBody2D").get_node("Sprite2D").texture.get)
@@ -321,7 +334,29 @@ func _on_start_pressed() -> void:
 			#var collisions = CollisionManager.get_collisions()
 			#for entry in collisions:
 				#print("Name:", entry.name, ", Instance ID:", entry.instance_id, ", Texture:", entry.texture)
-			$MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Stop.set_text("%s\n%s\n%s\n" % [Rarity.find_key(ra.pop_front()), Rarity.find_key(ra.pop_front()), Rarity.find_key(ra.pop_front())])
+			if ra.is_empty(): return
+			var r1: Rarity = ra[0]
+			var r2: Rarity = ra[1]
+			var r3: Rarity = ra[2]
+		
+			for r in [r1,r2,r3]:
+				match r:
+					Rarity.UNCOMMON:
+						score += 100
+					Rarity.COMMON:
+						score += 200
+					Rarity.RARE:
+						score += 400
+					Rarity.UNIQUE:
+						score += 800
+					Rarity.LEGENDARY:
+						score += 2000
+			$MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Score.set_text("Score: %d" % score)
+			$MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Stop.set_text("Results:\n%s\n%s\n%s\n" % [Rarity.find_key(r1), Rarity.find_key(r2), Rarity.find_key(r3)])
+			finish = true
+		_: 
+			$MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Score.set_text("Score: %d" % score)
+			finish = true
 	slot_count += 1
 	pass
 

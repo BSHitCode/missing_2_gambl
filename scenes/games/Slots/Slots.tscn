@@ -1,9 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://2mcv3wi0jd6f"]
+[gd_scene load_steps=17 format=3 uid="uid://2mcv3wi0jd6f"]
 
 [ext_resource type="Script" path="res://scenes/games/Slots/slots.gd" id="1_683aw"]
+[ext_resource type="LabelSettings" uid="uid://domtsvogcugid" path="res://resources/fonts/slots_label.tres" id="2_srs4y"]
 [ext_resource type="StyleBox" uid="uid://cmdn6j1an2l8k" path="res://resources/styles/menu_button_focus.tres" id="3_haotf"]
+[ext_resource type="Theme" uid="uid://dyl0t2ulglnco" path="res://resources/styles/theme/slots_theme.tres" id="3_inmxg"]
 [ext_resource type="StyleBox" uid="uid://bwlfshmexmdqw" path="res://resources/styles/menu_button_hover.tres" id="4_lympl"]
 [ext_resource type="StyleBox" uid="uid://v3452tl7evl5" path="res://resources/styles/menu_button.tres" id="4_nrarf"]
+[ext_resource type="Script" path="res://scenes/games/Slots/node_detector.gd" id="5_p8kgm"]
+[ext_resource type="Texture2D" uid="uid://bkecdpxtplks1" path="res://icon.svg" id="5_t6wjp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lpm8v"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k6cks"]
 load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
@@ -22,6 +28,9 @@ load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.cte
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbtqs"]
 size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_maodp"]
+size = Vector2(128, 129)
 
 [node name="Slots" type="Control"]
 layout_mode = 3
@@ -43,6 +52,49 @@ theme_override_constants/margin_left = 100
 theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 100
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lpm8v")
+
+[node name="RightTop" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 1235
+theme_override_constants/margin_top = 415
+theme_override_constants/margin_right = 455
+theme_override_constants/margin_bottom = 445
+
+[node name="Panel" type="Panel" parent="MarginContainer/PanelContainer/RightTop"]
+layout_mode = 2
+
+[node name="LeftTop" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 415
+theme_override_constants/margin_right = 1710
+theme_override_constants/margin_bottom = 445
+
+[node name="Panel" type="Panel" parent="MarginContainer/PanelContainer/LeftTop"]
+layout_mode = 2
+
+[node name="RightBottom" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 1235
+theme_override_constants/margin_top = 765
+theme_override_constants/margin_right = 455
+theme_override_constants/margin_bottom = 95
+
+[node name="Panel" type="Panel" parent="MarginContainer/PanelContainer/RightBottom"]
+layout_mode = 2
+
+[node name="LeftBottom" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 765
+theme_override_constants/margin_right = 1710
+theme_override_constants/margin_bottom = 95
+
+[node name="Panel" type="Panel" parent="MarginContainer/PanelContainer/LeftBottom"]
+layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -97,14 +149,32 @@ shape = SubResource("RectangleShape2D_qbtqs")
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 300
+theme_override_constants/margin_top = 200
 theme_override_constants/margin_right = 0
-theme_override_constants/margin_bottom = 300
+theme_override_constants/margin_bottom = 200
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Score" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Score:"
+label_settings = ExtResource("2_srs4y")
+
+[node name="Stop" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme = ExtResource("3_inmxg")
 text = "Stop"
+
+[node name="Restart" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_inmxg")
+text = "Restart"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -135,5 +205,20 @@ theme_override_styles/hover = ExtResource("4_lympl")
 theme_override_styles/normal = ExtResource("4_nrarf")
 text = "Menu"
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer2/Button" to="." method="_on_button_pressed"]
+[node name="NodeDetector" type="Marker2D" parent="."]
+visible = false
+position = Vector2(-9, 697)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="NodeDetector"]
+script = ExtResource("5_p8kgm")
+
+[node name="Sprite2D" type="Sprite2D" parent="NodeDetector/CharacterBody2D"]
+texture = ExtResource("5_t6wjp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NodeDetector/CharacterBody2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_maodp")
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Stop" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/Menu" to="." method="_on_menu_pressed"]
