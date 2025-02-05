@@ -23,13 +23,6 @@ ziraelexe: k12209550
 
 ## Execution
 
-### Using compiled file
-1. **Run the Game**
-   - Windows: Open `GamblingGame.exe` (x86_64)
-   - Linux: Open `GamblingGameLinux.x86_64` (x86_64)
-   - Linux: Open `GamblingGameLinux.arm64` (arm64)
-   - For others please export on your own using the following explaination.
-
 ### In Editor
 1. **Run the Game**
    - Open the project in Godot Engine.
@@ -38,3 +31,10 @@ ziraelexe: k12209550
 2. **Export the Game (Optional)**
    - Use Godot's export options to create executable builds for your desired platform (Windows, Linux, etc.).
    - Project -> Export -> Add... (next to the word "Presets")
+  
+### Using compiled file (ONLY on with-exec branch -> excluded because it adds 100MB)
+1. **Run the Game**
+   - Windows: Open `GamblingGame.exe` (x86_64)
+   - Linux: Open `GamblingGameLinux.x86_64` (x86_64)
+   - Linux: Open `GamblingGameLinux.arm64` (arm64)
+   - For others please export on your own using the following explaination (preferred).
