@@ -30,9 +30,10 @@ font_size = 50
 script = ExtResource("1_d2kca")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_right = 0.53
 anchor_bottom = 1.0
+offset_right = 0.399963
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -46,7 +47,7 @@ script = ExtResource("1_8mw3w")
 bingo_template = NodePath("bingoNumberExample")
 
 [node name="bingoNumberExample" type="Button" parent="MarginContainer/bingoGridContainer"]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_mxw53")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_b1ftw")
@@ -175,10 +176,10 @@ max_polyphony = 10
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -117.0
-offset_top = 7.0
-offset_right = -77.0
-offset_bottom = 47.0
+offset_left = -992.0
+offset_top = 24.0
+offset_right = -952.0
+offset_bottom = 64.0
 grow_horizontal = 0
 script = ExtResource("10_kt0ah")
 metadata/_edit_use_anchors_ = true
@@ -188,6 +189,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("11_dmymm")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="button_down" from="VBoxContainer/singleDraw" to="." method="_on_single_draw_button_down"]
 [connection signal="button_down" from="VBoxContainer/tenDraw" to="." method="_on_ten_draw_button_down"]
