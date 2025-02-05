@@ -37,4 +37,4 @@ ziraelexe: k12209550
    - Windows: Open `GamblingGame.exe` (x86_64)
    - Linux: Open `GamblingGameLinux.x86_64` (x86_64)
    - Linux: Open `GamblingGameLinux.arm64` (arm64)
-   - For others please export on your own using the following explaination (preferred).
+   - For others please export on your own using the previous explaination (preferred).
