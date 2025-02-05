@@ -1,8 +1,8 @@
 # GamblingGame
 **Contributors**
-FelixWoess: k12206357
-Cornelius Engl: k12216183
-ziraelexe: k12209550
+   - FelixWoess: k12206357
+   - Cornelius Engl: k12216183
+   - ziraelexe: k12209550
 
 ## Installation
 
