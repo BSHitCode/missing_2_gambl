@@ -76,7 +76,15 @@ offset_top = -131.0
 offset_right = 238.0
 grow_vertical = 0
 
-[node name="Menu" type="Button" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Menu" type="Button" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.32
@@ -88,4 +96,4 @@ text = "Menu"
 [connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/Roulette" to="." method="_on_roulette_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/Pairs" to="." method="_on_pairs_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/Bingo" to="." method="_on_bingo_pressed"]
-[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/Menu" to="." method="_on_menu_pressed"]

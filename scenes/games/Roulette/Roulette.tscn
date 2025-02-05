@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://do1oufjmnpgk5"]
+[gd_scene load_steps=22 format=3 uid="uid://do1oufjmnpgk5"]
 
 [ext_resource type="Script" path="res://scenes/games/Roulette/collision_shape_2d.gd" id="1_ggoj8"]
 [ext_resource type="Texture2D" uid="uid://dnc7uqqdlroif" path="res://Roulette.png" id="1_p8o02"]
@@ -11,6 +11,111 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lpccg"]
 radius = 389.803
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4k2a"]
+bg_color = Color(0.154876, 0.154876, 0.154876, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3jk4"]
+bg_color = Color(0.147672, 0.147672, 0.147672, 1)
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x8m3q"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_peihe"]
+bg_color = Color(0.94229, 0, 0.148271, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.573843, 0.789669, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dthwn"]
+bg_color = Color(0.999765, 0.194973, 0.144659, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekci1"]
+bg_color = Color(0.572702, 0, 0, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sovx2"]
+bg_color = Color(0.455463, 0.98588, 3.85046e-07, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.573843, 0.789669, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ads3e"]
+bg_color = Color(0, 1, 0.0980392, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2anas"]
+bg_color = Color(0, 0.576397, 0.107, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4o75f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_khi26"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ujdp"]
 
 [node name="Roulette" type="Node2D"]
 
@@ -60,9 +165,9 @@ layout_mode = 2
 [node name="Schwarz" type="Button" parent="RouletteControl/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("3_lv8hu")
-theme_override_styles/focus = ExtResource("4_1vu5k")
-theme_override_styles/hover = ExtResource("5_th72v")
-theme_override_styles/normal = ExtResource("6_e7fk2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_c4k2a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c3jk4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_x8m3q")
 text = "Schwarz"
 
 [node name="MarginContainer2" type="MarginContainer" parent="RouletteControl/PanelContainer/MarginContainer/VBoxContainer"]
@@ -71,9 +176,9 @@ layout_mode = 2
 [node name="Rot" type="Button" parent="RouletteControl/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2"]
 layout_mode = 2
 theme = ExtResource("3_lv8hu")
-theme_override_styles/focus = ExtResource("4_1vu5k")
-theme_override_styles/hover = ExtResource("5_th72v")
-theme_override_styles/normal = ExtResource("6_e7fk2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_peihe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dthwn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekci1")
 text = "Rot"
 
 [node name="MarginContainer3" type="MarginContainer" parent="RouletteControl/PanelContainer/MarginContainer/VBoxContainer"]
@@ -82,9 +187,9 @@ layout_mode = 2
 [node name="Grün" type="Button" parent="RouletteControl/PanelContainer/MarginContainer/VBoxContainer/MarginContainer3"]
 layout_mode = 2
 theme = ExtResource("3_lv8hu")
-theme_override_styles/focus = ExtResource("4_1vu5k")
-theme_override_styles/hover = ExtResource("5_th72v")
-theme_override_styles/normal = ExtResource("6_e7fk2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_sovx2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ads3e")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2anas")
 text = "Grün"
 
 [node name="PanelContainer2" type="PanelContainer" parent="RouletteControl"]
@@ -98,9 +203,13 @@ offset_left = 0.0400009
 offset_top = 970.376
 offset_right = -1561.6
 offset_bottom = 0.259949
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4o75f")
 
 [node name="MarginContainer" type="MarginContainer" parent="RouletteControl/PanelContainer2"]
 layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = -10
+theme_override_constants/margin_right = 15
 
 [node name="VBoxContainer" type="VBoxContainer" parent="RouletteControl/PanelContainer2/MarginContainer"]
 layout_mode = 2
@@ -122,15 +231,20 @@ offset_left = 1516.0
 offset_top = 639.0
 offset_right = 1857.0
 offset_bottom = 837.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_khi26")
 
 [node name="MarginContainer" type="MarginContainer" parent="RouletteControl/PanelContainer3"]
 layout_mode = 2
+theme_override_constants/margin_left = -15
+theme_override_constants/margin_top = -30
+theme_override_constants/margin_right = 15
 
 [node name="VBoxContainer" type="VBoxContainer" parent="RouletteControl/PanelContainer3/MarginContainer"]
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="RouletteControl/PanelContainer3/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/margin_bottom = 15
 
 [node name="Gerade" type="Button" parent="RouletteControl/PanelContainer3/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
@@ -440,6 +554,20 @@ layout_mode = 2
 [node name="thirtysix" type="Button" parent="RouletteControl/PanelContainer5/MarginContainer/VBoxContainer/MarginContainer5"]
 layout_mode = 2
 text = "36"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7ujdp")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "Result:"
 
 [connection signal="pressed" from="RouletteControl/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/Schwarz" to="StaticBody2D/Sprite2D" method="_on_schwarz_pressed"]
 [connection signal="pressed" from="RouletteControl/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/Rot" to="StaticBody2D/Sprite2D" method="_on_rot_pressed"]

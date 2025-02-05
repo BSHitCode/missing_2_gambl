@@ -1,9 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://b2qmi0penhs6k"]
+[gd_scene load_steps=16 format=3 uid="uid://b2qmi0penhs6k"]
 
 [ext_resource type="Script" path="res://scenes/games/Bingo/bingo_grid.gd" id="1_8mw3w"]
 [ext_resource type="Script" path="res://scenes/games/Bingo/scene_bingo.gd" id="1_d2kca"]
 [ext_resource type="AudioStream" uid="uid://bs5u2qof2q531" path="res://scenes/games/Bingo/bingocorrect.wav" id="3_osigo"]
+[ext_resource type="StyleBox" uid="uid://cmdn6j1an2l8k" path="res://resources/styles/menu_button_focus.tres" id="3_yc7lb"]
+[ext_resource type="StyleBox" uid="uid://bwlfshmexmdqw" path="res://resources/styles/menu_button_hover.tres" id="4_5v2cg"]
 [ext_resource type="AudioStream" uid="uid://03duq7woirkj" path="res://scenes/games/Bingo/bingowon.wav" id="4_jm1gb"]
+[ext_resource type="StyleBox" uid="uid://v3452tl7evl5" path="res://resources/styles/menu_button.tres" id="5_lg5c0"]
 [ext_resource type="Script" path="res://scenes/games/Bingo/sound_switch_button.gd" id="10_kt0ah"]
 [ext_resource type="Texture2D" uid="uid://bpksxpd2l2jca" path="res://scenes/games/Bingo/sound_on.png" id="11_dmymm"]
 
@@ -109,19 +112,40 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -28.0
-offset_top = -116.0
-offset_right = 28.0
-offset_bottom = -50.0
+offset_left = -32.0
+offset_top = -204.0
+offset_right = 239.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/separation = 15
 
-[node name="singleDraw" type="Button" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 15
+
+[node name="singleDraw" type="Button" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = ExtResource("3_yc7lb")
+theme_override_styles/hover = ExtResource("4_5v2cg")
+theme_override_styles/normal = ExtResource("5_lg5c0")
 text = "Draw 1"
 
-[node name="tenDraw" type="Button" parent="VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_bottom = 15
+
+[node name="tenDraw" type="Button" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = ExtResource("3_yc7lb")
+theme_override_styles/hover = ExtResource("4_5v2cg")
+theme_override_styles/normal = ExtResource("5_lg5c0")
 text = "Draw 10"
 
 [node name="ResetButton" type="Button" parent="."]
@@ -191,7 +215,40 @@ offset_bottom = 40.0
 texture = ExtResource("11_dmymm")
 metadata/_edit_use_anchors_ = true
 
-[connection signal="button_down" from="VBoxContainer/singleDraw" to="." method="_on_single_draw_button_down"]
-[connection signal="button_down" from="VBoxContainer/tenDraw" to="." method="_on_ten_draw_button_down"]
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -238.0
+offset_top = -131.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Menu" type="Button" parent="VBoxContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.32
+theme_override_styles/focus = ExtResource("3_yc7lb")
+theme_override_styles/hover = ExtResource("4_5v2cg")
+theme_override_styles/normal = ExtResource("5_lg5c0")
+text = "Menu"
+
+[connection signal="button_down" from="VBoxContainer/MarginContainer/singleDraw" to="." method="_on_single_draw_button_down"]
+[connection signal="button_down" from="VBoxContainer/MarginContainer2/tenDraw" to="." method="_on_ten_draw_button_down"]
 [connection signal="button_down" from="ResetButton" to="." method="_on_reset_button_button_down"]
 [connection signal="button_down" from="TextureButton" to="TextureButton" method="_on_button_down"]
+[connection signal="pressed" from="VBoxContainer2/MarginContainer/Menu" to="." method="_on_menu_pressed"]

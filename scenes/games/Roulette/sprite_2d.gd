@@ -39,29 +39,39 @@ func determine_winning_number():
 
 func check_win(color: String):
 	if winning_number in green and color == "green":
-		print("Gewonnen! Die Zahl ", winning_number, " ist grün.")
+		print("Gewonnen! Die Zahl %d ist grün." % winning_number)
+		$"../../PanelContainer/MarginContainer/Label".set_text("Winner!\nThe number %d is green." % winning_number)
 	elif winning_number in red and color == "red":
-		print("Gewonnen! Die Zahl ", winning_number, " ist rot.")
+		print("Gewonnen! Die Zahl %d ist rot." % winning_number)
+		$"../../PanelContainer/MarginContainer/Label".set_text("Winner!\nThe number %d is red." % winning_number)
 	elif winning_number in black and color == "black":
-		print("Gewonnen! Die Zahl ", winning_number, " ist schwarz.") 	
+		print("Gewonnen! Die Zahl %d ist schwarz." % winning_number) 	
+		$"../../PanelContainer/MarginContainer/Label".set_text("Winner!\nThe number %d is black." % winning_number)
 	else:
 		print("Verloren! Die Zahl war ", winning_number) 
+		$"../../PanelContainer/MarginContainer/Label".set_text("Loser!\nThe number was %d" % winning_number)
 		
 
 func check_win_oddOrnot(module: String):
 	if winning_number%2 == 0 and module == "even":
-		print("Gewonnen! Die Zahl ", winning_number, " ist gerade")
+		print("Gewonnen! Die Zahl %d ist gerade")
+		$"../../PanelContainer/MarginContainer/Label".set_text("Winner!\nThe number %d is even." % winning_number)
 	elif winning_number%2 != 0 and module == "odd":
-		print("Gewonnen! Die Zahl ", winning_number, " ist ungerade")
+		print("Gewonnen! Die Zahl %d ist ungerade")
+		$"../../PanelContainer/MarginContainer/Label".set_text("Winner!\nThe number %d is odd." % winning_number)
 	else:
 		print("Verloren! Die Zahl war ", winning_number)
+		$"../../PanelContainer/MarginContainer/Label".set_text("Loser!\nThe number was %d" % winning_number)
 		
 		
 func check_win_number(number: int):
 	if winning_number == number:
-		print("Gewonnen! Die Zahl ", winning_number, " hat gewonnen")
+		print("Gewonnen! Die Zahl %d hat gewonnen")
+		$"../../PanelContainer/MarginContainer/Label".set_text("Winner!\nThe number %d has won." % winning_number)
+		
 	else :
-		print("Verloren! Die Zahl ", winning_number, " hat gewonnen")	
+		print("Verloren! Die Zahl %d hat gewonnen")	
+		$"../../PanelContainer/MarginContainer/Label".set_text("Loser!\nThe number %d has lost." % winning_number)
 		
 
 func _on_grün_pressed() -> void:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://q1yxqs6l3e7c"]
+[gd_scene load_steps=9 format=3 uid="uid://q1yxqs6l3e7c"]
 
 [ext_resource type="Script" path="res://code/menu.gd" id="1_510py"]
 [ext_resource type="StyleBox" uid="uid://v3452tl7evl5" path="res://resources/styles/menu_button.tres" id="2_3i4kt"]
+[ext_resource type="Theme" uid="uid://dg80n53th74xt" path="res://resources/main_menu.tres" id="2_evcts"]
 [ext_resource type="StyleBox" uid="uid://cmdn6j1an2l8k" path="res://resources/styles/menu_button_focus.tres" id="2_xkx74"]
 [ext_resource type="StyleBox" uid="uid://bwlfshmexmdqw" path="res://resources/styles/menu_button_hover.tres" id="3_v5isd"]
 
@@ -47,6 +48,8 @@ anchor_left = 0.4
 anchor_top = 0.7
 anchor_right = 0.6
 anchor_bottom = 1.0
+offset_top = -185.0
+offset_bottom = -225.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_pjt5a")
@@ -73,29 +76,11 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../../MarginContainer3/Quit")
-focus_neighbor_bottom = NodePath("../../MarginContainer2/Options")
+theme = ExtResource("2_evcts")
 theme_override_styles/focus = ExtResource("2_xkx74")
 theme_override_styles/hover = ExtResource("3_v5isd")
 theme_override_styles/normal = ExtResource("2_3i4kt")
 text = "Start"
-
-[node name="MarginContainer2" type="MarginContainer" parent="Buttons/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="Options" type="Button" parent="Buttons/MarginContainer/VBoxContainer/MarginContainer2"]
-layout_mode = 2
-size_flags_vertical = 7
-focus_neighbor_top = NodePath("../../MarginContainer/Start")
-focus_neighbor_bottom = NodePath("../../MarginContainer3/Quit")
-theme_override_styles/focus = ExtResource("2_xkx74")
-theme_override_styles/hover = ExtResource("3_v5isd")
-theme_override_styles/normal = ExtResource("2_3i4kt")
-text = "Options"
 
 [node name="MarginContainer3" type="MarginContainer" parent="Buttons/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -108,13 +93,12 @@ theme_override_constants/margin_bottom = 10
 [node name="Quit" type="Button" parent="Buttons/MarginContainer/VBoxContainer/MarginContainer3"]
 layout_mode = 2
 size_flags_vertical = 7
-focus_neighbor_top = NodePath("../../MarginContainer2/Options")
 focus_neighbor_bottom = NodePath("../../MarginContainer/Start")
+theme = ExtResource("2_evcts")
 theme_override_styles/focus = ExtResource("2_xkx74")
 theme_override_styles/hover = ExtResource("3_v5isd")
 theme_override_styles/normal = ExtResource("2_3i4kt")
 text = "Quit"
 
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/MarginContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/MarginContainer2/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Buttons/MarginContainer/VBoxContainer/MarginContainer3/Quit" to="." method="_on_quit_pressed"]

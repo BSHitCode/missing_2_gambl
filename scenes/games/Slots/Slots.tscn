@@ -59,7 +59,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_lpm8v")
 
 [node name="RightTop" type="MarginContainer" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 1235
+theme_override_constants/margin_left = 1255
 theme_override_constants/margin_top = 415
 theme_override_constants/margin_right = 455
 theme_override_constants/margin_bottom = 445
@@ -78,7 +78,7 @@ layout_mode = 2
 
 [node name="RightBottom" type="MarginContainer" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 1235
+theme_override_constants/margin_left = 1255
 theme_override_constants/margin_top = 765
 theme_override_constants/margin_right = 455
 theme_override_constants/margin_bottom = 95

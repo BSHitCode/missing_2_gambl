@@ -242,3 +242,7 @@ func _on_reset_button_button_down() -> void:
 	_init_bingo_table()
 	gacha_history.text = ""
 	
+
+
+func _on_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/Menu.tscn")
