@@ -11,9 +11,9 @@ ziraelexe: k12209550
    git clone https://github.com/BSHitCode/missing_2_gambl.git
    ```
 
-2. **Install Godot 4 - .NET Version**
+2. **Install Godot 4 - .NET Version AND .NET**
    - Windows: [Godot Engine 4+ - .NET](https://godotengine.org/download).
-   - LLinux:  [Godot Engine 4+ - .NET](https://godotengine.org/download/linux/).
+   - Linux:  [Godot Engine 4+ - .NET](https://godotengine.org/download/linux/).
   
    - .NET 7 or newer: [.NET >=7](https://dotnet.microsoft.com/en-us/).
 
