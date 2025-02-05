@@ -23,7 +23,7 @@ ziraelexe: k12209550
 
 ## Execution
 
-### In Editor
+### Using compiled file
 1. **Run the Game**
    - Windows: Open `GamblingGame.exe` (x86_64)
    - Linux: Open `GamblingGameLinux.x86_64` (x86_64)
