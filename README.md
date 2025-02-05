@@ -38,3 +38,7 @@
    - Linux: Open `GamblingGameLinux.x86_64` (x86_64)
    - Linux: Open `GamblingGameLinux.arm64` (arm64)
    - For others please export on your own using the previous explaination (preferred).
+   
+2. **Run Linux Binary**
+   - `uname -m`
+   - `./GamblingGameLinux.x86_64`
